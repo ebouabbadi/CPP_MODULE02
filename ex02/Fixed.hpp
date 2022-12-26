@@ -6,7 +6,7 @@
 /*   By: ebouabba <ebouabba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:09:50 by ebouabba          #+#    #+#             */
-/*   Updated: 2022/12/21 15:32:20 by ebouabba         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:22:52 by ebouabba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed
 {
 private:
     int value;
-    static const int n_fractional_bits = 8;
+    static const int bits = 8;
 
 public:
     Fixed();
@@ -34,21 +34,21 @@ public:
     int toInt(void) const;
     float toFloat(void) const;
     /*-------------- comparison operators -------------*/
-    bool operator<(const Fixed &c) const;
-    bool operator>(const Fixed &c) const;
-    bool operator>=(const Fixed &c) const;
-    bool operator<=(const Fixed &c) const;
-    bool operator==(const Fixed &c) const;
-    bool operator!=(const Fixed &c) const;
+    bool operator<(Fixed c);
+    bool operator>(Fixed c);
+    bool operator>=(Fixed c);
+    bool operator<=(Fixed c);
+    bool operator==(Fixed c);
+    bool operator!=(Fixed c);
     /*-------------- arithmetic operators -------------*/
-    Fixed operator+(const Fixed &c);
-    Fixed operator-(const Fixed &c);
-    Fixed operator*(const Fixed &c);
-    Fixed operator/(const Fixed &c);
+    Fixed operator+(Fixed c);
+    Fixed operator-(Fixed c);
+    Fixed operator*(Fixed c);
+    Fixed operator/(Fixed c);
     /*-------------- increment/decrement ---------------*/
-    Fixed &operator++(void);
+    Fixed operator++(void);
     Fixed operator++(int);
-    Fixed &operator--(void);
+    Fixed operator--(void);
     Fixed operator--(int);
     /*-------------- static member function ------------*/
     static Fixed &min(Fixed &c1, Fixed &c2);

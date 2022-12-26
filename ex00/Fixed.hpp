@@ -6,7 +6,7 @@
 /*   By: ebouabba <ebouabba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 14:47:52 by ebouabba          #+#    #+#             */
-/*   Updated: 2022/12/21 14:47:53 by ebouabba         ###   ########.fr       */
+/*   Updated: 2022/12/26 10:44:36 by ebouabba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ class Fixed
 {
 private:
     int value;
-    static const int n_fractional_bits = 8;
+    static const int bits = 8;
 
 public:
-    Fixed();
-    Fixed(const Fixed &copy);
-    void operator=(const Fixed &old_obj);
-    ~Fixed();
+    Fixed();                                /*default constructor*/
+    Fixed(const Fixed &copy);               /*copy constructor*/
+    Fixed &operator=(const Fixed &old_obj); /*copy assignment operator overload*/
+    ~Fixed();                               /*destructor*/
     int getRawBits(void) const;
     void setRawBits(int const raw);
 };

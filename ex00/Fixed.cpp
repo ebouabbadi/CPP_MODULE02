@@ -6,7 +6,7 @@
 /*   By: ebouabba <ebouabba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 14:47:59 by ebouabba          #+#    #+#             */
-/*   Updated: 2022/12/21 14:48:00 by ebouabba         ###   ########.fr       */
+/*   Updated: 2022/12/26 10:44:44 by ebouabba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ Fixed::Fixed(const Fixed &copy)
     *this = copy;
 }
 
-void Fixed::operator=(const Fixed &old_obj)
+Fixed &Fixed::operator=(const Fixed &old_obj)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     this->value = old_obj.getRawBits();
+    return (*this);
 }
 
 Fixed::~Fixed()
